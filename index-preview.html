@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibraNet™ - Open Community</title>
+  <link rel="icon" type="image/x-icon" href="res/img/favicon.png">
+  <style>
+    body {
+      background-color: #eeffff;
+      @media (prefers-color-scheme: dark) {
+        background-color: #002030;
+      }
+    }
+    header {
+      display: flex;
+      right: 0;
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 3px;
+      align-items: center;
+      min-height: 20px;
+      background-color: #caf4ff;
+      position: fixed;
+      border-radius: 0 0 20px 20px;
+      @media (prefers-color-scheme: dark) {
+        background-color: #003050;
+      }
+    }
+    .long-logo {
+      display: none;
+    }
+    @media (orientation: landscape) or (min-width: 740px) {
+      .long-logo {
+        display: block;
+      }
+      .compact-logo {
+        display: none;
+      }
+    }
+    main {
+      padding: 70px;
+    }
+</style>
+</head>
+<body>
+  <header>
+    <img id="logo1" src="res/img/logo1.png" class="long-logo" alt="VibraNet logo" style="width: 100px; height: auto;">
+
+    <img id="logo2" src="res/img/logo2.png" class="compact-logo" alt="VibraNet logo" style="width: 45px; height: auto;">
+  </header>
+  <main>
+    <section id="hero">Vibra<span>Net™</span></section>
+  </main>
+</body>
+</html>
