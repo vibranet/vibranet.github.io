@@ -8,9 +8,17 @@
   <style>
     body {
       background-color: #eeffff;
-      @media (prefers-color-scheme: dark) {
-        background-color: #002030;
-      }
+    }
+    p, h1, h2 {
+      font-family: Arial, sans-serif;
+      margin: 0 0 8px 0;
+    }
+    h1 {
+      color: #004040;
+      text-shadow: 0 0 5px #008080;
+    }
+    p {
+      color: #005555;
     }
     header {
       display: flex;
@@ -24,9 +32,6 @@
       background-color: #caf4ff;
       position: fixed;
       border-radius: 0 0 20px 20px;
-      @media (prefers-color-scheme: dark) {
-        background-color: #003050;
-      }
     }
     .long-logo {
       display: none;
@@ -40,7 +45,38 @@
       }
     }
     main {
-      padding: 70px;
+      padding-top: 60px;
+    }
+    #hero h1 span {
+      color: #0077aa;
+      text-shadow: 0 0 5px #00cccc;
+    }
+    #hero {
+      background-color: #caf4ff;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 5px;
+    }
+    @media (prefers-color-scheme: dark) {
+      p {
+        color: #caf4ff;
+      }
+      h1 {
+        color: #4070aa;
+      }
+      header {
+        background-color: #003050;
+      }
+      body {
+        background-color: #002030;
+      }
+      #hero {
+        background-color: #003050;
+      }
+      #hero h1 span {
+        color: #00deef;
+        text-shadow: 0 0 5px #00ffff;
+      }
     }
 </style>
 </head>
@@ -51,7 +87,7 @@
     <img id="logo2" src="res/img/logo2.png" class="compact-logo" alt="VibraNet logo" style="width: 45px; height: auto;">
   </header>
   <main>
-    <section id="hero">Vibra<span>Net™</span></section>
+    <section id="hero"><h1>Vibra<span>Net™</span> - open community</h1><p>The open source start-up project</p></section>
   </main>
 </body>
 </html>
