@@ -8,6 +8,8 @@
   <style>
     body {
       background-color: #eeffff;
+      display: flex;
+      flex-direction: column;
     }
     p, h1, h2 {
       font-family: Arial, sans-serif;
@@ -32,20 +34,30 @@
       background-color: #caf4ff;
       position: fixed;
       border-radius: 0 0 20px 20px;
+      box-shadow: 0 0 10px #00cccc;
+    }
+    #burger-box {
+      display: none;
+      background-color: #caf4ff;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00cccc;
+      top: 60px;
+      right: 10px;
+      padding: 10px;
+      position: fixed;
+      min-width: 80px;
+      min-height: 100px;
+    }
+    #burger-toggle:checked ~ #burger-box {
+      display: block;
     }
     .long-logo {
       display: none;
     }
-    @media (orientation: landscape) or (min-width: 740px) {
-      .long-logo {
-        display: block;
-      }
-      .compact-logo {
-        display: none;
-      }
-    }
     main {
       padding-top: 60px;
+      display: flex;
+      flex-direction: column;
     }
     #hero h1 span {
       color: #0077aa;
@@ -56,6 +68,27 @@
       border-radius: 20px;
       padding: 20px;
       margin: 5px;
+      box-shadow: 0 0 10px #00cccc;
+    }
+    #burger-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 7px;
+    }
+    #burger-menu span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #005050;
+      box-shadow: 0 0 5px #008080;
     }
     @media (prefers-color-scheme: dark) {
       p {
@@ -77,6 +110,48 @@
         color: #00deef;
         text-shadow: 0 0 5px #00ffff;
       }
+      #burger-menu span {
+        background-color: #4070aa;
+      }
+      #burger-box {
+        background-color: #003050;
+      }
+    }
+    @media (orientation: landscape) or (min-width: 740px) {
+      .long-logo {
+        display: block;
+      }
+      .compact-logo {
+        display: none;
+      }
+      #burger-menu, #burger-box {
+        display: none !important;
+      }
+      #long-dsc-btn {
+        display: flex !important;
+      }
+    }
+    .discord-btn {
+      display: flex;
+      text-decoration: none;
+      color: white;
+      margin: 5px;
+      align-items: center;
+      background-color: #5865f2;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      box-shadow: 0 0 5px #5865f2;
+      justify-content: center;
+    }
+    #long-dsc-btn {
+      display: none;
+      margin-left: auto;
+    }
+    .discord-icon {
+      width: 27px;
+      height: auto;
+      margin-right: 3px;
     }
 </style>
 </head>
@@ -85,9 +160,39 @@
     <img id="logo1" src="res/img/logo1.png" class="long-logo" alt="VibraNet logo" style="width: 100px; height: auto;">
 
     <img id="logo2" src="res/img/logo2.png" class="compact-logo" alt="VibraNet logo" style="width: 45px; height: auto;">
+    <label for="burger-toggle" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn" id="long-dsc-btn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="discord-icon">
+        <path fill="white" d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.72-11,68.6,68.6,0,0,1-10.64-5.12c.91-.66,1.8-1.34,2.65-2a75.58,75.58,0,0,0,72.71,0c.85.7,1.74,1.37,2.65,2a68.42,68.42,0,0,1-10.64,5.12,74.74,74.74,0,0,0,6.72,11,105.73,105.73,0,0,0,31-18.83C130.1,49.22,123.39,26.47,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
+      </svg>
+      <p style="color: white; margin: 0">Join Discord</p>
+    </a>
   </header>
+  <input type="checkbox" id="burger-toggle" style="display: none">
+  <div id="burger-box"><a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="discord-icon">
+    <path fill="white" d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.72-11,68.6,68.6,0,0,1-10.64-5.12c.91-.66,1.8-1.34,2.65-2a75.58,75.58,0,0,0,72.71,0c.85.7,1.74,1.37,2.65,2a68.42,68.42,0,0,1-10.64,5.12,74.74,74.74,0,0,0,6.72,11,105.73,105.73,0,0,0,31-18.83C130.1,49.22,123.39,26.47,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
+  </svg>
+  <p style="color: white; margin: 0">Join Discord</p>
+</a>
+</div>
   <main>
     <section id="hero"><h1>Vibra<span>Net™</span> - open community</h1><p>The open source start-up project</p></section>
   </main>
+<script>
+  const burgerCheckbox = document.getElementById("burger-toggle")
+  const mediaQuery = window.matchMedia("(orientation: landscape) or (min-width: 740px)");
+  function unCheck(e) {
+    if (e.matches) {
+      burgerCheckbox.checked = false;
+    }
+  }
+
+  mediaQuery.addEventListener("change", unCheck);
+</script>
 </body>
 </html>
