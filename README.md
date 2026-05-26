@@ -10,5 +10,5 @@ VibraNet™ is a free open source start-up without tracking, cookies and targete
 
 ---
 
-this project is not developed by AI
+This project is not developed by AI
 (development in progress)
