@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <!-- https://vibra-universe.github.io/ -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VibraNet™ - Open Community</title>
-  <link href="res/img/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="res/img/favicon.png">
   <style>
     body {
       background-color: #eeffff;
       display: flex;
       flex-direction: column;
+      margin: 0;
+      box-sizing: border-box;
     }
-    p, h1, h2 {
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #00cccc;
+      color: #005555;
+    }
+    .comparison-table th {
+      font-weight: bold;
+      background-color: rgba(0, 204, 204, 0.1);
+    }
+    .comparison-table td:first-child {
+      text-align: left;
+    }
+
+    p, h1, h2, h3, ul {
       font-family: Arial, sans-serif;
       margin: 0 0 8px 0;
     }
-    h1 {
+    h1, h2, h3 {
       color: #004040;
       text-shadow: 0 0 5px #008080;
     }
-    p {
+    p, ul {
       color: #005555;
+      margin: 10px;
     }
     header {
       display: flex;
@@ -49,15 +73,44 @@
       min-height: 100px;
     }
     #burger-toggle:checked ~ #burger-box {
-      display: block;
+      display: flex;
+      flex-direction: column;
     }
     .long-logo {
       display: none;
     }
+    footer {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      min-height: 20px;
+      background-color: #caf4ff;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 0 10px #00cccc;
+      box-sizing: border-box;
+    }
     main {
-      padding-top: 60px;
+      padding: 10px;
+      padding-top: 80px;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
+    }
+    #card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .card {
+      width: calc(100% - 20px);
+      background-color: #caf4ff;
+      box-shadow: 0 0 10px #00cccc;
+      border-radius: 20px;
+      margin: 10px;
+      box-sizing: border-box;
+      padding: 20px;
+      justify-content: center;
     }
     #hero h1 span {
       color: #0077aa;
@@ -91,13 +144,17 @@
       box-shadow: 0 0 5px #008080;
     }
     @media (prefers-color-scheme: dark) {
-      p {
+      .comparison-table th, .comparison-table td {
+        border-bottom: 1px solid #4070aa;
         color: #caf4ff;
       }
-      h1 {
+      p, ul {
+        color: #caf4ff;
+      }
+      h1, h2, h3 {
         color: #4070aa;
       }
-      header {
+      header, footer {
         background-color: #003050;
       }
       body {
@@ -109,6 +166,9 @@
       #hero h1 span {
         color: #00deef;
         text-shadow: 0 0 5px #00ffff;
+      }
+      .card {
+        background-color: #003050;
       }
       #burger-menu span {
         background-color: #4070aa;
@@ -129,6 +189,17 @@
       }
       #long-dsc-btn {
         display: flex !important;
+      }
+      #card-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-evenly;
+      }
+      .card {
+        max-width: 400px;
+        min-width: 250px;
       }
     }
     .discord-btn {
@@ -173,8 +244,10 @@
     </a>
   </header>
   <input type="checkbox" id="burger-toggle" style="display: none">
-  <div id="burger-box"><a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="discord-icon">
+  <div id="burger-box" style="justify-content: center">
+    <h3>Menu</h3>
+    <a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.14 96.36" class="discord-icon">
     <path fill="white" d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,53.22,6.83,77.19,77.19,0,0,0,49.88,0,105.15,105.15,0,0,0,19.44,8.07C3.66,31.58-1.86,54.65,1,77.53A105.73,105.73,0,0,0,32,96.36a74.37,74.37,0,0,0,6.72-11,68.6,68.6,0,0,1-10.64-5.12c.91-.66,1.8-1.34,2.65-2a75.58,75.58,0,0,0,72.71,0c.85.7,1.74,1.37,2.65,2a68.42,68.42,0,0,1-10.64,5.12,74.74,74.74,0,0,0,6.72,11,105.73,105.73,0,0,0,31-18.83C130.1,49.22,123.39,26.47,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.83,46,53.83,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.07,46,96.07,53,91,65.69,84.69,65.69Z"/>
   </svg>
   <p style="color: white; margin: 0">Join Discord</p>
@@ -182,7 +255,49 @@
 </div>
   <main>
     <section id="hero"><h1>Vibra<span>Net™</span> - open community</h1><p>The open source start-up project</p></section>
+  <p>This project is for open-source developers and anyone tired of tracking, targeted ads, and corporate surveillance. This is for you. Together, as a community, we create alternatives that are tracking-free, AI-free, and ad-free. Just pure utility. Here, you own your data and control your information. This space is driven by the community, not by corporations.</p>
+  <div id="card-content">
+<article id="differences" class="card">
+  <h2>💡 DIFFERENCES</h2>
+  <p>Contrary to tech giants, our project is not funded by targeted advertising or tracking; it exists through open source and the community.</p>
+  
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Corporate</th>
+        <th>VibraNet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tracking</strong></td>
+        <td>✅ Yes</td>
+        <td>❌ No</td>
+      </tr>
+      <tr>
+        <td><strong>AI</strong></td>
+        <td>✅ Yes</td>
+        <td>❌ No</td>
+      </tr>
+      <tr>
+        <td><strong>Privacy</strong></td>
+        <td>❌ No</td>
+        <td>✅ Yes</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+
+    <article id="feature" class="card"></article>
+    <article id="test1" class="card"></article>
+    <article id="test2" class="card"></article>
+    <article id="test3" class="card"></article>
+  </div>
   </main>
+  <footer>
+    <p style="font-size: 0.85rem">© 2026 VibraNet™ - All rights reserved on name and logos. Source code open-source under GNU AGPLv3. Using the name "VibraNet" or its logos without written permission is strictly prohibited.</p>
+  </footer>
 <script>
   const burgerCheckbox = document.getElementById("burger-toggle")
   const mediaQuery = window.matchMedia("(orientation: landscape) or (min-width: 740px)");
