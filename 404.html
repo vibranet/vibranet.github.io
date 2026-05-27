@@ -15,10 +15,68 @@
       justify-content: center;
       margin: 0;
       box-sizing: border-box;
+      height: 100vh;
+      width: 100vw;
+    }
+    p, h1, h2, h3, a, ul {
+      font-family: Arial, sans-serif;
+      margin: 0 0 8px 0;
+    }
+    h1, h3 {
+      text-shadow: 0 0 5px #008080;
+    }
+    h1, h3 {
+      color: #004040;
+    }
+    h2 {
+      font-size: 100px;
+      font-weight: bold;
+      color: #009090;
+      text-shadow: 0 0 5px #00aaaa;
+    }
+    p, ul {
+      color: #005555;
+      margin: 10px;
+    }
+    .box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: calc(100% - 20px);
+      background-color: #caf4ff;
+      box-shadow: 0 0 10px #00cccc;
+      border-radius: 20px;
+      margin: 10px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      background-color: #00aaff;
+      box-shadow: 0 0 10px #00aaff;
+      color: #004040;
+      padding: 10px;
+      border-radius: 5px;
+      font-weight: bold;
     }
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #002030;
+      }
+      .box {
+        background-color: #003050;
+      }
+      h1, h3 {
+        color: #4070aa;
+      }
+      h2 {
+        color: #00deef;
+        text-shadow: 0 0 5px #00ffff;
+      }
+      p, ul {
+        color: #caf4ff;
       }
     }
   </style>
@@ -27,7 +85,9 @@
   <div class="box">
     <h1>Oh! This page doesn't exist!</h1>
     <h2>404</h2>
-    <p>Why did you make that spelling mistake? Why doesn't this page exist?? Why was this page moved???</p>
+    <p>Why did you make that spelling mistake?</p>
+    <p>Why doesn't this page exist??</p>
+    <p>Why was this page moved???</p>
     <a href="https://vibranet.github.io">Go back to the homepage! Otherwise, it's going to explode!</a>
   </div>
 </body>
