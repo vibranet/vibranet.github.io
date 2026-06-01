@@ -26,18 +26,13 @@
   
   <script>
     (function() {
-      // 1. Récupérer la langue principale du navigateur (ex: "fr-FR" -> "fr")
       const userLang = (navigator.language || navigator.userLanguage).toLowerCase().slice(0, 2);
-
-      // 2. Définir les langues supportées par VibraNet™
       const supportedLanguages = ['fr'];
 
-      // 3. Redirection conditionnelle
       if (supportedLanguages.includes(userLang)) {
         window.location.replace('/' + userLang + '/');
       } else {
 
-        // Fallback si la langue n'est pas supportée ou est introuvable
         window.location.replace('/en/');
       }
     })();
