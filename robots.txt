@@ -1,5 +1,9 @@
 User-agent: *
-Allow: /
+Disallow: /$
+# Bloque la page 404 globale
 Disallow: /404.html
+
+Allow: /en/
+Allow: /fr/
 
 Sitemap: https://vibranet.github.io/sitemap.xml
