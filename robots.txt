@@ -1,6 +1,5 @@
 User-agent: *
 Disallow: /$
-# Bloque la page 404 globale
 Disallow: /404.html
 
 Allow: /en/
