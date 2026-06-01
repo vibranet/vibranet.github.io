@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- https://vibra-universe.github.io/ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO optimisation -->
+  <meta name="description" content="VibraNet™ - A free and open source start-up, tracking-free, the sovereign digital resistance, built by humans, for humans.">
+  <meta name="image" content="https://vibranet.github.io/res/img/banner.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vibranet.github.io/">
+  <meta property="og:title" content="VibraNet™ - Open Community">
+  <meta property="og:description" content="VibraNet™ - A free and open source start-up, tracking-free, the sovereign digital resistance, built by humans, for humans.">
+  <meta property="og:image" content="https://vibranet.github.io/res/img/banner.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vibranet.github.io/">
+  <meta name="twitter:title" content="VibraNet™ - Open Community">
+  <meta name="twitter:description" content="VibraNet™ - A free and open source start-up, tracking-free, the sovereign digital resistance, built by humans, for humans.">
+  <meta name="twitter:image" content="https://vibranet.github.io/res/img/banner.png">
+
+  <!-- page start -->
+  <title>VibraNet™ - Open Community</title>
+  <link rel="icon" type="image/x-icon" href="/res/img/favicon.png">
+  <style>
+    body {
+      background-color: #eeffff;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-family: Arial, sans-serif;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #00cccc;
+      color: #005555;
+    }
+    .comparison-table th {
+      font-weight: bold;
+      background-color: rgba(0, 204, 204, 0.1);
+    }
+    .comparison-table td:first-child {
+      text-align: left;
+    }
+    a {
+      text-decoration: none;
+      color: #006699;
+    }
+    p, h1, h2, h3, ul, a {
+      font-family: Arial, sans-serif;
+      margin: 0 0 8px 0;
+    }
+    h1, h2, h3 {
+      color: #004040;
+      text-shadow: 0 0 5px #008080;
+    }
+    p, ul {
+      color: #005555;
+      margin: 10px;
+    }
+    header {
+      display: flex;
+      right: 0;
+      left: 0;
+      top: 0;
+      margin: 0;
+      padding: 3px;
+      align-items: center;
+      min-height: 20px;
+      background-color: #caf4ff;
+      position: fixed;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 0 10px #00cccc;
+    }
+    #burger-box {
+      display: none;
+      background-color: #caf4ff;
+      border-radius: 20px;
+      box-shadow: 0 0 10px #00cccc;
+      top: 60px;
+      right: 10px;
+      padding: 10px;
+      position: fixed;
+      min-width: 80px;
+      min-height: 100px;
+    }
+    #burger-toggle:checked ~ #burger-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .long-logo {
+      display: none;
+    }
+    footer {
+      display: flex;
+      padding: 10px;
+      align-items: center;
+      min-height: 20px;
+      background-color: #caf4ff;
+      border-radius: 20px 20px 0 0;
+      box-shadow: 0 0 10px #00cccc;
+      box-sizing: border-box;
+    }
+    main {
+      padding: 10px;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    #card-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+    .card {
+      width: calc(100% - 20px);
+      background-color: #caf4ff;
+      box-shadow: 0 0 10px #00cccc;
+      border-radius: 20px;
+      margin: 10px;
+      box-sizing: border-box;
+      padding: 20px;
+      justify-content: center;
+    }
+    #hero h1 span {
+      color: #0077aa;
+      text-shadow: 0 0 5px #00cccc;
+    }
+    #hero {
+      background-color: #caf4ff;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 5px;
+      box-shadow: 0 0 10px #00cccc;
+    }
+    #burger-menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      padding: 0;
+      cursor: pointer;
+      margin-left: auto;
+      margin-right: 7px;
+    }
+    #burger-menu span {
+      display: block;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #005050;
+      box-shadow: 0 0 5px #008080;
+    }
+    @media (prefers-color-scheme: dark) {
+      .comparison-table th, .comparison-table td {
+        border-bottom: 1px solid #4070aa;
+        color: #caf4ff;
+      }
+      p, ul {
+        color: #caf4ff;
+      }
+      h1, h2, h3 {
+        color: #4070aa;
+      }
+      a {
+        color: #00aaaa;
+      }
+      header, footer {
+        background-color: #003050;
+      }
+      body {
+        background-color: #002030;
+      }
+      #hero {
+        background-color: #003050;
+      }
+      #hero h1 span {
+        color: #00deef;
+        text-shadow: 0 0 5px #00ffff;
+      }
+      .card {
+        background-color: #003050;
+      }
+      #burger-menu span {
+        background-color: #4070aa;
+      }
+      #burger-box {
+        background-color: #003050;
+      }
+    }
+    @media (orientation: landscape) or (min-width: 740px) {
+      .long-logo {
+        display: block;
+      }
+      .compact-logo {
+        display: none;
+      }
+      #burger-menu, #burger-box {
+        display: none !important;
+      }
+      #header-landscape {
+        display: flex !important;
+        align-items: center;
+      }
+      #card-content {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-evenly;
+      }
+      .card {
+        max-width: 400px;
+        min-width: 250px;
+      }
+    }
+    .discord-btn {
+      display: flex;
+      text-decoration: none;
+      color: white;
+      margin: 5px;
+      align-items: center;
+      background-color: #5865f2;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      box-shadow: 0 0 5px #5865f2;
+      justify-content: center;
+    }
+    #header-landscape {
+      display: none;
+      margin-left: auto;
+    }
+    .discord-icon {
+      width: 27px;
+      height: auto;
+      margin-right: 3px;
+    }
+    #click-icon {
+      margin: 0;
+      padding: 0;
+      height: 40px;
+      width: auto;
+    }
+</style>
+</head>
+<body>
+  <header>
+      <a href="#" id="click-icon">
+      <img id="logo1" src="/res/img/logo1.png" class="long-logo" alt="VibraNet logo" style="width: auto; height: 100%;">
+      <img id="logo2" src="/res/img/logo2.png" class="compact-logo" alt="VibraNet logo" style="width: auto; height: 100%;">
+      </a>
+    <label for="burger-toggle" id="burger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <div id="header-landscape">
+      <a href="https://vibranet.github.io/contact">Contact us</a>
+      <a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn">
+    <img style="height: 20px; width: auto; margin: 3px; filter: brightness(0) invert(1);" src="/res/img/discord.svg">
+      <p style="color: white; margin: 0">Join Discord</p>
+    </a>
+  </div>
+  </header>
+  <input type="checkbox" id="burger-toggle" style="display: none">
+  <div id="burger-box">
+    <h3>Menu</h3>
+    <a href="https://discord.gg/XKhYfVCUJ7" target="_blank" rel="noopener noreferrer" class="discord-btn">
+    <img style="height: 20px; width: auto; margin: 3px; filter: brightness(0) invert(1);" src="/res/img/discord.svg">
+  <p style="color: white; margin: 0">Join Discord</p>
+</a>
+    <a href="https://vibranet.github.io/contact">Contact us</a>
+</div>
+  <main>
+    <section id="hero"><h1>Vibra<span>Net™</span> - open community</h1><p>The open source start-up project</p></section>
+  <p>This project is for open-source developers and anyone tired of tracking, targeted ads, and corporate surveillance. This is for you. Together, as a community, we create alternatives that are tracking-free, AI-free, and ad-free. Just pure utility. Here, you own your data and control your information. This space is driven by the community, not by corporations.</p>
+  <div id="card-content">
+<article id="card-differences" class="card">
+  <h2>💡 DIFFERENCES</h2>
+  <p>Contrary to tech giants, our project is not funded by targeted advertising or tracking; it exists through open source and the community.</p>
+  
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Corporate</th>
+        <th>VibraNet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Tracking</strong></td>
+        <td>✅ Yes</td>
+        <td>❌ No</td>
+      </tr>
+      <tr>
+        <td><strong>AI</strong></td>
+        <td>✅ Yes</td>
+        <td>❌ No</td>
+      </tr>
+      <tr>
+        <td><strong>Privacy</strong></td>
+        <td>❌ No</td>
+        <td>✅ Yes</td>
+      </tr>
+      <tr>
+        <td><strong>Responsive</strong></td>
+        <td>✅ Yes (with ADs)</td>
+        <td>✅ Yes (pure)</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+<article id="card-stats" class="card">
+    <h2>💡 In Numbers</h2>
+    <ul>
+      <li>0 trackers</li>
+      <li>0% developed by AI</li>
+      <li>0 click collected</li>
+      <li>100% of your data belongs to you</li>
+      <li>100% of your session are protected</li>
+    </ul>
+</article>
+<article id="card-resistance" class="card">
+    <h2>🛡️ Join the resistance</h2>
+    <p>VibraNet refuses the standards of the conventional web, here you are free with our sovereign community.</p>
+<p>whether you are a developer, designer or human rights defender, this project welcomes you without tracking, simple, effective.
+    </p>
+</article>
+<article id="card-roadmap" class="card">
+    <h2>🛣️ Roadmap</h2>
+    <ul>
+      <li>Website identity and styles: <strong style="color: #00aaaa;">Done</strong></li>
+      <li>Writing content: <strong style="color: #00aaaa;">In progress</strong></li>
+      <li>Secure backend and full independence: <strong style="color: #00aaaa;">planned</strong></li>
+    </ul>
+</article>
+<article id="card-tools" class="card">
+  <h2>🔧 Our tools</h2>
+  <p>We work the old-fashioned way, without AI bombarding our code.</p>
+</article>
+  </div>
+  </main>
+  <footer>
+    <p style="font-size: 0.85rem">© 2026 VibraNet™ - All rights reserved on name and logos. Source code open-source under GNU AGPLv3. Using the name "VibraNet" or its logos without written permission is strictly prohibited.</p>
+  </footer>
+<script>
+  const burgerCheckbox = document.getElementById("burger-toggle")
+  const mediaQuery = window.matchMedia("(orientation: landscape) or (min-width: 740px)");
+  function unCheck(e) {
+    if (e.matches) {
+      burgerCheckbox.checked = false;
+    }
+  }
+
+  mediaQuery.addEventListener("change", unCheck);
+</script>
+</body>
+</html>
